@@ -1,28 +1,30 @@
-import { useState } from 'react'
+import React from 'react';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Marketplace from './components/Marketplace';
+import Pricing from './components/Pricing';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-black text-white font-inter">
+      <Navbar />
+      <Hero />
+      <Marketplace />
+      <Pricing />
+      <footer className="border-t border-white/10 bg-black/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-white/60 text-sm">© {new Date().getFullYear()} NeoForge 3D. All rights reserved.</p>
+            <div className="flex items-center gap-4 text-sm text-white/70">
+              <a href="#" className="hover:text-white">Terms</a>
+              <span className="opacity-40">•</span>
+              <a href="#" className="hover:text-white">Privacy</a>
+              <span className="opacity-40">•</span>
+              <a href="#" className="hover:text-white">Support</a>
+            </div>
+          </div>
         </div>
-      </div>
+      </footer>
     </div>
-  )
+  );
 }
-
-export default App
