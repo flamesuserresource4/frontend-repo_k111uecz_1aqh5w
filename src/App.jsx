@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Categories from './components/Categories';
 import Marketplace from './components/Marketplace';
 import Pricing from './components/Pricing';
 
 export default function App() {
+  const [category, setCategory] = useState('all');
+
   return (
     <div className="min-h-screen bg-black text-white font-inter">
       <Navbar />
       <Hero />
-      <Marketplace />
+      <Categories selected={category} onSelect={setCategory} />
+      <Marketplace filter={category} />
       <Pricing />
       <footer className="border-t border-white/10 bg-black/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
